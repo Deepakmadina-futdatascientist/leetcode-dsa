@@ -1,0 +1,25 @@
+# LeetCode 14: Longest Common Prefix
+# Approach: Character by Character Comparison
+# Time Complexity: O(n * m)
+# Space Complexity: O(1)
+
+class Solution(object):
+    def longestCommonPrefix(self, strs):
+        # Edge case: if list is empty
+        if not strs:
+            return ""
+
+        prefix = ""
+
+        # Loop through each character index of the first string
+        for i in range(len(strs[0])):
+            # Compare the current character with all other strings
+            for word in strs:
+                # If index goes out of range or characters don't match
+                if i >= len(word) or word[i] != strs[0][i]:
+                    return prefix
+
+            # If all strings match at this index, add to prefix
+            prefix += strs[0][i]
+
+        return prefix
