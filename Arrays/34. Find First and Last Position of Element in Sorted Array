@@ -1,0 +1,18 @@
+class Solution(object):
+    def searchRange(self, nums, target):
+        first=[]
+        last=[]
+     
+        for i in range(len(nums)):
+            if(nums[i]==target):
+                first.append(i)
+               
+        if(len(first)==0):
+            return([-1,-1])
+    
+        last.append(min(first))
+        last.append(max(first))
+        return last
+
+        
+        
