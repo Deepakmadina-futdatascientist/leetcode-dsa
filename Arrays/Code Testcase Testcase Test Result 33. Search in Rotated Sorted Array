@@ -1,0 +1,11 @@
+class Solution(object):
+    def search(self, nums, target):
+        count=0
+        for i in range(len(nums)):
+            if(nums[i]==target):
+                return i
+                count+=1
+            else:
+                continue
+        if(count==0):
+            return -1
